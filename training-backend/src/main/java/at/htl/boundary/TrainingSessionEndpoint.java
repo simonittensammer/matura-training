@@ -88,4 +88,34 @@ public class TrainingSessionEndpoint {
         tsr.persist(trainingSession);
         return Response.ok(trainingSession.id).build();
     }
+
+    @PUT
+    @Transactional
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(JsonObject jsonObject) {
+        Athlete athlete = ar.findById(
+                jsonObject.getJsonNumber("athleteId").longValue()
+        );
+
+        Coach coach = cr.findById(
+                jsonObject.getJsonNumber("coachId").longValue()
+        );
+
+        TrainingSession trainingSession = tsr.findById(
+                jsonObject.getJsonNumber("id").longValue()
+        );
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                "yyyy-MM-dd'T'HH:mm:ss",
+                Locale.ENGLISH
+        );
+
+        trainingSession.timeStamp = LocalDateTime.parse(jsonObject.getString("timeStamp"), formatter);
+        trainingSession.athlete = athlete;
+        trainingSession.coach = coach;
+
+        tsr.update(trainingSession);
+        return Response.ok(trainingSession.id).build();
+    }
 }

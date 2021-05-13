@@ -26,3 +26,17 @@ Content-Type: application/json
   "coachId": 1,
   "athleteId": 1
 }
+
+###
+
+PUT http://localhost:8080/api/trainingSession
+Content-Type: application/json
+
+{
+  "id": 7,
+  "timeStamp": "2021-01-20T11:00:00",
+  "coachId": 2,
+  "athleteId": 3
+}
+
+###
