@@ -4,6 +4,7 @@ import at.htl.control.TrainingSessionRepository;
 import at.htl.entity.TrainingSession;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -28,9 +29,21 @@ public class TrainingSessionEndpoint {
         return Response.ok(tsr.findById(id)).build();
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response findByIdUsingQueryParam(@QueryParam("id") Long id) {
-        return Response.ok(tsr.findById(id)).build();
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response findByIdUsingQueryParam(@QueryParam("id") Long id) {
+//        return Response.ok(tsr.findById(id)).build();
+//    }
+
+    @DELETE
+    @Path("/{id}")
+    @Transactional
+    public Response deleteById(@PathParam("id") Long id) {
+        TrainingSession trainingSession = tsr.findById(id);
+        if (trainingSession == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        tsr.deleteById(id);
+        return Response.noContent().build();
     }
 }

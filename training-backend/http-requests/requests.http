@@ -12,3 +12,8 @@ GET http://localhost:8080/api/trainingSession?id=1
 Accept: application/json
 
 ###
+
+DELETE http://localhost:8080/api/trainingSession/1
+Accept: application/json
+
+###
