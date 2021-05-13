@@ -1,0 +1,30 @@
+{
+  "athlete": {
+    "equipmentList": [
+      {
+        "id": 1,
+        "price": 10.0,
+        "type": "shoes"
+      },
+      {
+        "id": 4,
+        "price": 7.5,
+        "type": "ball"
+      }
+    ],
+    "id": 1,
+    "name": "Konsti",
+    "personalTrainer": {
+      "id": 1,
+      "name": "Dieter",
+      "phoneNumber": 12345
+    }
+  },
+  "coach": {
+    "id": 1,
+    "name": "Dieter",
+    "phoneNumber": 12345
+  },
+  "id": 1,
+  "timeStamp": "2020-10-03T14:00:00"
+}
