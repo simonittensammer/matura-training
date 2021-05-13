@@ -2,6 +2,7 @@ package at.htl.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 
 @Entity
@@ -18,5 +19,6 @@ public class Equipment extends PanacheEntityBase {
     public double price;
 
     @ManyToOne
+    @JsonbTransient
     public Athlete athlete;
 }
