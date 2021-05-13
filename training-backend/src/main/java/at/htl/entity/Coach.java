@@ -1,4 +1,20 @@
 package at.htl.entity;
 
-public class Coach {
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
+import javax.persistence.*;
+
+@Entity
+@SequenceGenerator(name = "coaSeq", sequenceName = "COA_SEQ", initialValue = 1)
+@Table(name = "APP_COACH")
+public class Coach extends PanacheEntityBase {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "coaSeq")
+    @Column(name = "COA_ID")
+    public Long id;
+
+    public String name;
+
+    public int phoneNumber;
 }
