@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@SequenceGenerator(name = "sessSeq", sequenceName = "SESS_SEQ", initialValue = 1)
+@SequenceGenerator(name = "sessSeq", sequenceName = "SESS_SEQ", initialValue = 7)
 @Table(name = "APP_TRAININGSESSION")
 public class TrainingSession extends PanacheEntityBase {
 
@@ -22,4 +22,13 @@ public class TrainingSession extends PanacheEntityBase {
 
     @ManyToOne
     public Coach coach;
+
+    public TrainingSession() {
+    }
+
+    public TrainingSession(LocalDateTime timeStamp, Athlete athlete, Coach coach) {
+        this.timeStamp = timeStamp;
+        this.athlete = athlete;
+        this.coach = coach;
+    }
 }

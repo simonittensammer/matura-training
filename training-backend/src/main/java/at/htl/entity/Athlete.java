@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@SequenceGenerator(name = "athSeq", sequenceName = "ATH_SEQ", initialValue = 1)
+@SequenceGenerator(name = "athSeq", sequenceName = "ATH_SEQ", initialValue = 4)
 @Table(name = "APP_ATHLETE")
 public class Athlete extends PanacheEntityBase {
 

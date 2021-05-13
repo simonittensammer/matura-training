@@ -6,7 +6,7 @@ import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name = "eqipSeq", sequenceName = "EQIP_SEQ", initialValue = 1)
+@SequenceGenerator(name = "eqipSeq", sequenceName = "EQIP_SEQ", initialValue = 5)
 @Table(name = "APP_EQUIPMENT")
 public class Equipment extends PanacheEntityBase {
 
