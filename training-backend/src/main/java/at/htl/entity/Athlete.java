@@ -20,6 +20,6 @@ public class Athlete extends PanacheEntityBase {
     @ManyToOne
     public Coach coach;
 
-    @OneToMany
+    @OneToMany(mappedBy = "athlete")
     public List<Equipment> equipmentList;
 }

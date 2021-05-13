@@ -16,4 +16,7 @@ public class Equipment extends PanacheEntityBase {
 
     public String type;
     public double price;
+
+    @ManyToOne
+    public Athlete athlete;
 }
