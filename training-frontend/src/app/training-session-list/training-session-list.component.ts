@@ -34,6 +34,11 @@ export class TrainingSessionListComponent implements OnInit {
     });
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   reload(): void {
     window.location.reload();
   }
