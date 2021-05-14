@@ -43,4 +43,13 @@ export class HttpService {
       coachId
     });
   }
+
+  editTrainingSession(id: number, timeStamp: string, athleteId: number, coachId: number): Observable<number> {
+    return this.http.put<number>(this.SERVER_URL + 'trainingSession', {
+      id,
+      timeStamp,
+      athleteId,
+      coachId
+    });
+  }
 }

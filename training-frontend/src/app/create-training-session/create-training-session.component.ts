@@ -39,7 +39,6 @@ export class CreateTrainingSessionComponent implements OnInit {
   }
 
   save(): void {
-    console.log(this.trainingSessionForm.value);
     this.httpService.addTrainingSession(
       formatDate(this.trainingSessionForm.value.timeStamp, 'yyyy-MM-dd\'T\'HH:mm:ss', this.locale),
       this.trainingSessionForm.value.athleteId,
