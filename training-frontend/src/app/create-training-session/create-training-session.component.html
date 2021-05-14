@@ -1,0 +1,36 @@
+<div class="content">
+  <h1>Create a new Training Session</h1>
+
+  <form [formGroup]="trainingSessionForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="timeStamp">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="athleteId">
+        <mat-option *ngFor="let option of athleteList" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="coachId">
+        <mat-option *ngFor="let option of coachList" [value]="option.id">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+  </form>
+</div>

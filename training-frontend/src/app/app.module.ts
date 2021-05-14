@@ -9,12 +9,20 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { TrainingSessionDetailComponent } from './training-session-detail/training-session-detail.component';
 import {MatButtonModule} from '@angular/material/button';
+import { CreateTrainingSessionComponent } from './create-training-session/create-training-session.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingSessionListComponent,
-    TrainingSessionDetailComponent
+    TrainingSessionDetailComponent,
+    CreateTrainingSessionComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,13 @@ import {MatButtonModule} from '@angular/material/button';
     NoopAnimationsModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,12 @@
 <div class="content">
   <h1>TrainingSessions</h1>
 
+  <button mat-raised-button color="primary" [routerLink]="['create']">
+    Create
+  </button>
+
+  <br><br>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
