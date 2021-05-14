@@ -33,4 +33,8 @@ export class TrainingSessionListComponent implements OnInit {
       });
     });
   }
+
+  reload(): void {
+    window.location.reload();
+  }
 }
